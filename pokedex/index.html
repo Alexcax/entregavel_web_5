@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Pokédex</title>
+
+    <!-- Estilos da página -->
+    <style>
+
+        /* Estilização geral da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 30px;
+        }
+
+        /* Título principal */
+        h1 {
+            color: #333;
+        }
+
+        /* Área principal da Pokédex */
+        #pokedex {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+
+        /* Campo de pesquisa */
+        input {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        /* Botão de pesquisa */
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Aparência do botão desabilitado */
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Área das mensagens de status */
+        #status-pokemon {
+            margin-top: 15px;
+        }
+
+        /* Área dos resultados */
+        #resultado-pokemon {
+            margin-top: 20px;
+        }
+
+        /* Imagem do Pokémon */
+        #resultado-pokemon img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        /* Nome do Pokémon */
+        #resultado-pokemon h2 {
+            text-transform: capitalize;
+        }
+
+        /* Lista dos tipos do Pokémon */
+        #resultado-pokemon ul {
+            padding-left: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Seção principal da Mini Pokédex -->
+    <main id="pokedex">
+
+        <!-- Título da aplicação -->
+        <h1>Search Pokédex</h1>
+
+        <p>Digite o nome de um Pokémon para pesquisar.</p>
+
+        <!-- Formulário de pesquisa -->
+        <form id="formulario-pokemon">
+
+            <!-- Campo para digitar o nome do Pokémon -->
+            <label for="nome-pokemon">
+                Nome do Pokémon:
+            </label>
+
+            <input
+                type="text"
+                id="nome-pokemon"
+                placeholder="Ex: pikachu"
+                required
+            >
+
+            <!-- Botão para realizar a pesquisa -->
+            <button type="submit" id="botao-pokemon">
+                Buscar Pokémon
+            </button>
+
+        </form>
+
+        <!-- Área de mensagens: carregando, erro ou não encontrado -->
+        <p id="status-pokemon" role="status" aria-live="polite"></p>
+
+        <!-- Área onde serão exibidos os dados do Pokémon -->
+        <div id="resultado-pokemon"></div>
+
+    </main>
+
+    <!-- Importa o JavaScript da Mini Pokédex -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

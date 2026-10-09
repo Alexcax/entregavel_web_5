@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buscador de CEP</title>
+
+    <!-- Estilos básicos da página -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        #status {
+            margin-top: 15px;
+        }
+
+        #resultado {
+            margin-top: 15px;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Título principal -->
+    <h1>Buscador de CEP</h1>
+
+    <p>Digite um CEP para consultar o endereço.</p>
+
+    <!-- Formulário de pesquisa -->
+    <form id="formulario-cep">
+
+        <!-- Campo para digitar o CEP -->
+        <label for="cep">CEP:</label>
+
+        <input
+            type="text"
+            id="cep"
+            placeholder="Ex: 01001000"
+            maxlength="9"
+            inputmode="numeric"
+            required
+        >
+
+        <!-- Botão para realizar a pesquisa -->
+        <button type="submit" id="botao-buscar">
+            Buscar CEP
+        </button>
+
+    </form>
+
+    <!-- Área para mensagens de carregamento e erro -->
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <!-- Área onde serão exibidos os dados do endereço -->
+    <dl id="resultado"></dl>
+
+    <!-- Área destinada ao histórico de pesquisas -->
+    <section>
+        <h2>Histórico de CEPs pesquisados</h2>
+
+        <!-- Lista preenchida dinamicamente pelo JavaScript -->
+        <ul id="historico-ceps"></ul>
+    </section>
+
+    <!-- Importa o arquivo JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
